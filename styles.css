@@ -1,0 +1,134 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1a1a2e; /* Dark navy background */
+  color: white;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background: linear-gradient(
+    135deg,
+    #e94560,
+    #0f3460
+  ); /* Gradient background */
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.left {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  color: white; /* White text for contrast */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for better visibility */
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+}
+
+nav ul li {
+  list-style: none;
+  margin: 0 23px;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+nav ul li:hover {
+  color: #e94560; /* Vibrant pink on hover */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+nav ul li a:hover {
+  color: #e94560; /* Vibrant pink on hover */
+  font-size: 1.08rem;
+}
+
+/* Hero Section */
+.firstsection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 80px 0;
+  padding: 0 20px;
+  min-height: 80vh;
+}
+
+.leftsection {
+  max-width: 50%;
+}
+
+.leftsection .highlight {
+  font-size: 4rem;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  color: #e94560; /* Vibrant pink */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+}
+
+.leftsection .subtext {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #f0f0f0; /* Light gray */
+  margin-top: 20px;
+}
+
+.rightsection img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.rightsection img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Typed.js Animation */
+.typed-animation {
+  background: linear-gradient(
+    135deg,
+    #e94560,
+    #ff6f61,
+    #ffa600
+  ); /* Vibrant gradient */
+  -webkit-background-clip: text; /* Clip background to text */
+  -webkit-text-fill-color: transparent; /* Make text transparent */
+  font-weight: 600; /* Slightly lighter weight */
+  font-size: 2rem; /* Reduced font size */
+  margin-top: 20px;
+}
+
+.typed-cursor {
+  display: none; /* Hide the blinking cursor */
+}
