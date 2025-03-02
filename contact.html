@@ -25,6 +25,7 @@
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="upload.html">Upload Art</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
           </ul>
         </div>
       </nav>
@@ -34,8 +35,57 @@
       <!-- Contact Section -->
       <section class="contact-section">
         <h2>Let's Connect</h2>
-        <p>Have questions or want to collaborate? Feel free to reach out!</p>
-        <a href="mailto:contact@artisticportfolio.com">Contact Us</a>
+        <p class="contact-subtext">
+          Have questions, feedback, or want to collaborate? We'd love to hear
+          from you! Reach out to us via the form below or through our social
+          media channels.
+        </p>
+        <div class="contact-content">
+          <div class="contact-form">
+            <form action="/contact" method="post">
+              <input type="text" name="name" placeholder="Your Name" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                rows="5"
+                required
+              ></textarea>
+              <button type="submit">Send Message</button>
+            </form>
+          </div>
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            <ul>
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <strong>Address:</strong> 123 Art Street, Creative City, World
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <strong>Email:</strong> contact@artisticportfolio.com
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <strong>Phone:</strong> +1 (123) 456-7890
+              </li>
+            </ul>
+            <div class="contact-social">
+              <h3>Follow Us</h3>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
