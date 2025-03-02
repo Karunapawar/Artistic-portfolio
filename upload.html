@@ -25,6 +25,7 @@
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="upload.html">Upload Art</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
           </ul>
         </div>
       </nav>
@@ -34,15 +35,54 @@
       <!-- Upload Section -->
       <section class="upload-section">
         <h2>Upload Your Art</h2>
+        <p class="upload-subtext">
+          Share your creativity with the world! Upload your artwork and provide
+          details to showcase it in our gallery.
+        </p>
         <form action="/upload" method="post" enctype="multipart/form-data">
-          <input type="text" name="title" placeholder="Art Title" required />
-          <textarea
-            name="description"
-            placeholder="Art Description"
-            required
-          ></textarea>
-          <input type="file" name="artwork" accept="image/*" required />
-          <button type="submit">Upload Art</button>
+          <div class="form-group">
+            <label for="title">Art Title</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Enter the title of your artwork"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="description">Art Description</label>
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Describe your artwork"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="artwork">Upload Artwork</label>
+            <div class="file-upload">
+              <input
+                type="file"
+                id="artwork"
+                name="artwork"
+                accept="image/*"
+                required
+              />
+              <label for="artwork" class="file-label">
+                <i class="fas fa-upload"></i>
+                <span>Choose a file</span>
+              </label>
+              <div id="file-preview"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit">Upload Art</button>
+          </div>
+          <div id="upload-progress">
+            <div id="progress-bar"></div>
+          </div>
+          <div id="upload-message"></div>
         </form>
       </section>
     </main>
@@ -56,6 +96,51 @@
       </div>
       <p>&copy; 2023 Artistic Portfolio. All rights reserved.</p>
     </footer>
-    <script src="assets/js/script.js"></script>
+
+    <!-- Scripts -->
+    <script>
+      // File upload preview
+      const fileInput = document.getElementById("artwork");
+      const filePreview = document.getElementById("file-preview");
+
+      fileInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            filePreview.innerHTML = `
+              <img src="${event.target.result}" alt="Preview" />
+              <p>${file.name}</p>
+            `;
+          };
+          reader.readAsDataURL(file);
+        } else {
+          filePreview.innerHTML = "";
+        }
+      });
+
+      // Simulate upload progress (for demonstration)
+      const uploadForm = document.querySelector("form");
+      const progressBar = document.getElementById("progress-bar");
+      const uploadMessage = document.getElementById("upload-message");
+
+      uploadForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        progressBar.style.width = "0%";
+        uploadMessage.textContent = "";
+
+        let width = 0;
+        const interval = setInterval(() => {
+          if (width >= 100) {
+            clearInterval(interval);
+            uploadMessage.textContent = "Upload complete!";
+            uploadMessage.style.color = "#4caf50"; // Green
+          } else {
+            width += 10;
+            progressBar.style.width = `${width}%`;
+          }
+        }, 200);
+      });
+    </script>
   </body>
 </html>
