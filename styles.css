@@ -1,4 +1,8 @@
-/* General Styles */
+/* style.css */
+
+/* style.css */
+
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -10,11 +14,6 @@ body {
   color: white;
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
 }
 
 /* Navigation Bar */
@@ -40,7 +39,129 @@ nav {
   font-weight: 700;
   font-family: "Playfair Display", serif;
   color: white; /* White text for contrast */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for better visibility */
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+}
+
+nav ul li {
+  list-style: none;
+  margin: 0 23px;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+nav ul li:hover {
+  color: #e94560; /* Vibrant pink on hover */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+nav ul li a:hover {
+  color: #e94560; /* Vibrant pink on hover */
+  font-size: 1.08rem;
+}
+
+/* Upload Section */
+.upload-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.upload-section h2 {
+  font-size: 2.5rem;
+  font-family: "Playfair Display", serif;
+  color: #e94560; /* Vibrant pink */
+  margin-bottom: 20px;
+}
+
+.upload-section form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.upload-section input,
+.upload-section textarea,
+.upload-section button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.upload-section button {
+  background-color: #e94560; /* Vibrant pink */
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-section button:hover {
+  background-color: #c2334d; /* Darker pink on hover */
+}
+
+/* Footer */
+footer {
+  background-color: rgba(26, 26, 46, 0.9); /* Semi-transparent dark navy */
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+footer .social-links {
+  margin-bottom: 10px;
+}
+
+footer .social-links a {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+  color: #e94560; /* Vibrant pink on hover */
+}
+
+footer p {
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background: linear-gradient(
+    135deg,
+    #e94560,
+    #0f3460
+  ); /* Gradient background */
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.left {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  color: white; /* White text for contrast */
 }
 
 nav ul {
@@ -114,21 +235,620 @@ nav ul li a:hover {
   transform: scale(1.05); /* Slight zoom on hover */
 }
 
-/* Typed.js Animation */
-.typed-animation {
-  background: linear-gradient(
-    135deg,
-    #e94560,
-    #ff6f61,
-    #ffa600
-  ); /* Vibrant gradient */
-  -webkit-background-clip: text; /* Clip background to text */
-  -webkit-text-fill-color: transparent; /* Make text transparent */
-  font-weight: 600; /* Slightly lighter weight */
-  font-size: 2rem; /* Reduced font size */
+/* About Section */
+.about-section {
+  background-color: rgba(26, 26, 46, 0.9); /* Semi-transparent dark navy */
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.about-content {
+  flex: 1;
+  text-align: left;
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  font-family: "Playfair Display", serif;
+  color: #e94560; /* Vibrant pink */
+  margin-bottom: 20px;
+}
+
+.about-subtext {
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  color: #f0f0f0;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.feature {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.feature i {
+  font-size: 2rem;
+  color: #e94560; /* Vibrant pink */
+  margin-bottom: 15px;
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  font-family: "Playfair Display", serif;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+.about-image {
+  flex: 1;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    margin-bottom: 40px;
+  }
+
+  .about-features li {
+    justify-content: center;
+  }
+}
+
+/* Gallery Section */
+.gallery-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  font-size: 2.5rem;
+  font-family: "Playfair Display", serif;
+  color: #e94560; /* Vibrant pink */
+  margin-bottom: 40px;
+}
+
+.gallery-filters {
+  margin-bottom: 40px;
+}
+
+.gallery-filters .filter-btn {
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #e94560; /* Vibrant pink */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.gallery-filters .filter-btn.active {
+  background-color: #c2334d; /* Darker pink */
+}
+
+.gallery-filters .filter-btn:hover {
+  background-color: #c2334d; /* Darker pink on hover */
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(26, 26, 46, 0.8); /* Semi-transparent dark navy */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+.gallery-item .overlay h3 {
+  font-size: 1.5rem;
+  font-family: "Playfair Display", serif;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.gallery-item .overlay p {
+  font-size: 1rem;
+  color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+.gallery-item .overlay .view-btn {
+  padding: 10px 20px;
+  background-color: #e94560; /* Vibrant pink */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.gallery-item .overlay .view-btn:hover {
+  background-color: #c2334d; /* Darker pink on hover */
+}
+
+/* Lightbox Modal */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.caption {
+  position: absolute;
+  bottom: 20px;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: rgba(26, 26, 46, 0.9); /* Semi-transparent dark navy */
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  font-family: "Playfair Display", serif;
+  color: #e94560; /* Vibrant pink */
+  margin-bottom: 20px;
+}
+
+.contact-subtext {
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  text-align: left;
+}
+
+.contact-form {
+  flex: 1;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #f0f0f0;
+  color: #1a1a2e;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background-color: #e94560; /* Vibrant pink */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #c2334d; /* Darker pink on hover */
+}
+
+.contact-info {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.contact-info h3 {
+  font-size: 1.8rem;
+  font-family: "Playfair Display", serif;
+  color: #e94560; /* Vibrant pink */
+  margin-bottom: 20px;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info ul li {
+  font-size: 1.1rem;
+  color: #f0f0f0;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-info ul li i {
+  color: #e94560; /* Vibrant pink */
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+.contact-social {
   margin-top: 20px;
 }
 
+.contact-social h3 {
+  font-size: 1.5rem;
+  font-family: "Playfair Display", serif;
+  color: #e94560; /* Vibrant pink */
+  margin-bottom: 10px;
+}
+
+.contact-social .social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.contact-social .social-links a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.contact-social .social-links a:hover {
+  color: #e94560; /* Vibrant pink on hover */
+}
+/* Typed.js Animation */
 .typed-cursor {
   display: none; /* Hide the blinking cursor */
+}
+
+/* Upload Section */
+.upload-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.upload-section h2 {
+  font-size: 2.5rem;
+  font-family: "Playfair Display", serif;
+  color: #e94560; /* Vibrant pink */
+  margin-bottom: 20px;
+}
+
+.upload-subtext {
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+}
+
+.upload-section form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.1rem;
+  color: #f0f0f0;
+  margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #f0f0f0;
+  color: #1a1a2e;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.file-upload {
+  position: relative;
+  margin-top: 10px;
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+.file-upload .file-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background-color: #e94560; /* Vibrant pink */
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.file-upload .file-label:hover {
+  background-color: #c2334d; /* Darker pink on hover */
+}
+
+.file-upload .file-label i {
+  margin-right: 10px;
+}
+
+#file-preview {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#file-preview img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+#file-preview p {
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+#upload-progress {
+  width: 100%;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+#progress-bar {
+  width: 0%;
+  height: 10px;
+  background-color: #e94560; /* Vibrant pink */
+  transition: width 0.3s ease;
+}
+
+#upload-message {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #e94560; /* Vibrant pink */
+  text-align: center;
+}
+/* style.css */
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1a1a2e; /* Dark navy background */
+  color: white;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+}
+
+/* Login Section */
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.login-container {
+  background-color: rgba(26, 26, 46, 0.9);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.login-container h2 {
+  font-size: 2.5rem;
+  font-family: "Playfair Display", serif;
+  color: #e94560; /* Vibrant pink */
+  margin-bottom: 20px;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #f0f0f0;
+  color: #1a1a2e;
+}
+
+.login-container input::placeholder {
+  color: #666;
+}
+
+.login-container button {
+  padding: 10px;
+  background-color: #e94560; /* Vibrant pink */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+  background-color: #c2334d; /* Darker pink on hover */
+}
+
+.login-container p {
+  margin-top: 20px;
+  color: #f0f0f0;
+}
+
+.login-container a {
+  color: #e94560;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.login-container a:hover {
+  color: #c2334d;
+  text-decoration: underline;
 }
