@@ -25,6 +25,7 @@
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="upload.html">Upload Art</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
           </ul>
         </div>
       </nav>
@@ -34,11 +35,48 @@
       <!-- Gallery Section -->
       <section class="gallery-section">
         <h2>Featured Artworks</h2>
+        <div class="gallery-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="painting">Paintings</button>
+          <button class="filter-btn" data-filter="photography">
+            Photography
+          </button>
+          <button class="filter-btn" data-filter="digital">Digital Art</button>
+        </div>
         <div class="gallery-grid">
-          <img src="assets/images/art1.jpg" alt="Artwork 1" />
-          <img src="assets/images/art2.jpg" alt="Artwork 2" />
-          <img src="assets/images/art3.jpg" alt="Artwork 3" />
-          <img src="assets/images/art4.jpg" alt="Artwork 4" />
+          <div class="gallery-item painting">
+            <img src="assets/images/art1.jpg" alt="Artwork 1" />
+            <div class="overlay">
+              <h3>Sunset Dreams</h3>
+              <p>By John Doe</p>
+              <a href="assets/images/art1.jpg" class="view-btn">View</a>
+            </div>
+          </div>
+          <div class="gallery-item photography">
+            <img src="assets/images/art2.jpg" alt="Artwork 2" />
+            <div class="overlay">
+              <h3>Mountain Serenity</h3>
+              <p>By Jane Smith</p>
+              <a href="assets/images/art2.jpg" class="view-btn">View</a>
+            </div>
+          </div>
+          <div class="gallery-item digital">
+            <img src="assets/images/art3.jpg" alt="Artwork 3" />
+            <div class="overlay">
+              <h3>Cyber City</h3>
+              <p>By Alex Green</p>
+              <a href="assets/images/art3.jpg" class="view-btn">View</a>
+            </div>
+          </div>
+          <div class="gallery-item painting">
+            <img src="assets/images/art4.jpg" alt="Artwork 4" />
+            <div class="overlay">
+              <h3>Ocean Waves</h3>
+              <p>By Emily White</p>
+              <a href="assets/images/art4.jpg" class="view-btn">View</a>
+            </div>
+          </div>
+          <!-- Add more gallery items here -->
         </div>
       </section>
     </main>
@@ -52,6 +90,59 @@
       </div>
       <p>&copy; 2023 Artistic Portfolio. All rights reserved.</p>
     </footer>
-    <script src="assets/js/script.js"></script>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+      <span class="close-btn">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+      <div class="caption"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      // Lightbox functionality
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const lightboxCaption = document.querySelector(".caption");
+
+      document.querySelectorAll(".view-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          lightbox.style.display = "block";
+          lightboxImg.src = btn.getAttribute("href");
+          lightboxCaption.textContent =
+            btn.parentElement.querySelector("h3").textContent;
+        });
+      });
+
+      document.querySelector(".close-btn").addEventListener("click", () => {
+        lightbox.style.display = "none";
+      });
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target !== lightboxImg) {
+          lightbox.style.display = "none";
+        }
+      });
+
+      // Filter functionality
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const filter = btn.getAttribute("data-filter");
+          document
+            .querySelectorAll(".filter-btn")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          document.querySelectorAll(".gallery-item").forEach((item) => {
+            if (filter === "all" || item.classList.contains(filter)) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
